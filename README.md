@@ -10,6 +10,10 @@ The `MakefileBuild` Visual Studio Extension adds functionality to Visual Studio 
 - **Build Makefiles**: Execute the `make` command to build the Makefile.
 - **Output Window Integration**: Displays build output and errors in the Visual Studio Output window.
 
+## Prerequisites
+
+To use this extension, you need to have the GNU build tools installed on your system. Ensure `make.exe` is available in your system PATH.
+
 ## Installation
 
 To install the extension:
