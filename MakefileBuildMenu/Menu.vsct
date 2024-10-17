@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<Extern href="stdidcmd.h"/>
+	<Extern href="vsshlids.h"/>
+	<Include href="KnownImageIds.vsct"/>
+	<Commands package="guidMyCommandPackage">
+		<Groups>
+			<!-- Define the menu group under the Build menu -->
+			<Group guid="guidMyCommandPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+				<Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_BUILD"/>
+			</Group>
+		</Groups>
+		<Buttons>
+			<!-- Build Project Button -->
+			<Button guid="guidMyCommandPackageCmdSet" id="MyBuildCommandId" priority="0x0100" type="Button">
+				<Parent guid="guidMyCommandPackageCmdSet" id="MyMenuGroup" />
+				<Icon guid="ImageCatalogGuid" id="ButtonClick" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Build Makefile</ButtonText>
+				</Strings>
+			</Button>
+			<!-- Generate File Button -->
+			<Button guid="guidMyCommandPackageCmdSet" id="MyGenerateFileCommandId" priority="0x0200" type="Button">
+				<Parent guid="guidMyCommandPackageCmdSet" id="MyMenuGroup" />
+				<Icon guid="ImageCatalogGuid" id="ButtonClick" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Generate File</ButtonText>
+				</Strings>
+			</Button>
+		</Buttons>
+	</Commands>
+	<KeyBindings>
+		<!-- Key binding for Build Project (Ctrl+K, Ctrl+B) -->
+		<KeyBinding guid="guidMyCommandPackageCmdSet" id="MyBuildCommandId" editor="guidVSStd97" key1="K" mod1="Control" key2="B" mod2="Control" />
+	</KeyBindings>
+	<Symbols>
+		<GuidSymbol name="guidMyCommandPackage" value="{fa24d542-0b4d-4f6b-ac03-24ff47c11b76}" />
+		<!-- Command Set -->
+		<GuidSymbol name="guidMyCommandPackageCmdSet" value="{2b40859b-27f8-4dc6-85b1-f253386aa5f6}">
+			<IDSymbol name="MyMenuGroup" value="0x1020" />
+			<IDSymbol name="MyBuildCommandId" value="0x0100" />
+			<IDSymbol name="MyGenerateFileCommandId" value="0x0200" />
+		</GuidSymbol>
+	</Symbols>
+</CommandTable>
